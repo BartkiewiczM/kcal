@@ -1,4 +1,4 @@
-class Entry < ApplicationRecord
+class Week < ApplicationRecord
 
   validates :calories, :proteins, :carbohydrates, :fats, :meal_type, presence: true
   def day
