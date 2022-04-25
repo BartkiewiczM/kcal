@@ -1,5 +1,5 @@
 <%content_for :title do%>
-  Licznik Kalorii &ndash; <%= DateTime.now.to_s(:date) %>
+  Diet Meter &ndash; <%= DateTime.now.to_s(:date) %>
 <%end%>
 
 
@@ -39,7 +39,7 @@
 
 <br>
 
-<center>Dodaj kolejny produkt:</center>
+<center>Add another meal: </center>
 <br></br>
 <%= render 'entries/form',entry: @entry1%>
 <br></br>
