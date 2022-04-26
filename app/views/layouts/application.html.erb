@@ -13,7 +13,7 @@
     <title>Diet Meter</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="shortcut icon" href="https://3.allegroimg.com/s512/03986d/c52fa2ab43828aa41b2e330f22b3/Litery-na-dom-oznaczenie-budynku-litera-czarna-D"/>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -30,6 +30,7 @@
       <% end %>
 
       <br></br>
+      <%if user_signed_in? %>
       <div class="card">
         <div class="card-body", style="text-align:center">
           <%if content_for(:title)%>
@@ -39,6 +40,7 @@
           <%end%>
         </div>
       </div>
+      <%end%>
       <br></br>
       <%= yield %>
     </div>

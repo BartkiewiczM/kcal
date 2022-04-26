@@ -1,3 +1,5 @@
+<%if user_signed_in? %>
+
 <%content_for :title do%>
   Diet Meter &ndash; <%= DateTime.now.to_s(:date) %>
 <%end%>
@@ -18,6 +20,7 @@
   <tbody>
     <% @entries.each do |entry| %>
       <tr>
+        <% if entry.user == current_user %>
         <td><%= entry.meal_type %></td>
         <td><%= entry.calories %></td>
         <td><%= entry.fats %></td>
@@ -27,6 +30,7 @@
         <td><%= link_to 'Show', entry %></td>
         <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
         <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%end%>
       </tr>
     <% end %>
         <td><strong>Day summary</strong></td>
@@ -46,3 +50,9 @@
 <div class="">
 <button class="btn btn-light">  <%= link_to 'View all entries', archives_index_path %></button>
 </div>
+
+<%else%>
+
+  <%=render 'entries/welcome' %>
+
+<%end%>

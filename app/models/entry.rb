@@ -5,6 +5,8 @@ class Entry < ApplicationRecord
     self.created_at.strftime("%b %e, %Y")
   end
 
+  belongs_to :user
+
 
 
 end

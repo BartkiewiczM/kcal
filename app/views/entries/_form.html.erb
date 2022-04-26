@@ -26,6 +26,11 @@
       <% form.label :carbohydrates %>
       <%= form.number_field :carbohydrates , class: "form-control", placeholder: "carbohydrates"%>
     </div>
+    <div class="col">
+
+      <%= form.number_field :user_id , id: :entry_user_id, class: "form-control", value: current_user.id , type: :hidden%>
+
+    </div>
 
   </div>
   <br></br>
