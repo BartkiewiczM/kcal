@@ -5,7 +5,7 @@ class EntriesController < ApplicationController
   # GET /entries or /entries.json
   def index
     @entries = Entry.where("created_at >= ? AND user_id == ?", Date.today, current_user)
-
+  
   end
 
   # GET /entries/1 or /entries/1.json
