@@ -9,7 +9,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-expand-lg">
         <%if user_signed_in?%>
         <li class="nav-item">
           <%= link_to "All entries", archives_index_path, class: "nav-link"%>
@@ -23,6 +23,9 @@
         <li class="nav-item">
           <%= link_to "Edit profile", edit_user_registration_path, class: "nav-link"%>
         </li>
+        <span class="btn btn-secondary" , style="position:  absolute; right: 0; margin-right: 30px; margin-bottom: 5px">
+          <%= link_to "New meal", root_path, class: "nav-link"%>
+        </span>
         <%else%>
         <li class="nav-item">
           <%= link_to "Sign up", new_user_registration_path, class: "nav-link"%>
@@ -30,6 +33,7 @@
         <li class="nav-item">
           <%= link_to "Sing in", new_user_session_path, class: "nav-link"%>
         </li>
+
         <%end%>
 
 
