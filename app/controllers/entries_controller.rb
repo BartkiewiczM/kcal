@@ -61,7 +61,7 @@ class EntriesController < ApplicationController
   end
 
 def correct_user
-  @entry = current_user.friends.find_by(id: params[:id])
+  @entry = current_user.entries.find_by(id: params[:id])
   redirect_to entries_path, notice: "Not authorized to edit this entry" if @friend.nil?
 end
 
