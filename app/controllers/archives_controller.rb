@@ -2,8 +2,8 @@ class ArchivesController < ApplicationController
   def index
     #@entries = Entry.where("user_id == ?", current_user)
 
-    @entries = Entry.where("user_id = ?", current_user)
-    #@entries.group_by(&:day)
+    @entries = Entry.where("user_id = ?", current_user).group_by(&:day)
+    
   end
   def weeks
     #day = Date.new(params[:created_at])
